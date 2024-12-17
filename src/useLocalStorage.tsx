@@ -4,7 +4,9 @@ type LocalStorageSetValue = string;
 type LocalStorageReturnValue = LocalStorageSetValue | null;
 
 function getValueStorage(key: string) {
-  const saveValue: string = JSON.parse(localStorage.getItem(key) ?? '');
+  const saveValue: LocalStorageSetValue = JSON.parse(
+    localStorage.getItem(key)!
+  );
 
   if (saveValue) return saveValue;
 }
