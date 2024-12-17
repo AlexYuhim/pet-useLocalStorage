@@ -1,9 +1,17 @@
 import './App.css';
+import { useLocalStorage } from './useLocalStorage';
 
 function App() {
+  const [value, { setValue }] = useLocalStorage('some-key');
   return (
     <>
-      <h1>Start dev</h1>
+      <p>Значение из LocalStorage: {value}</p>
+      <div>
+        <button onClick={() => setValue('new storage value')}>
+          Задать значение
+        </button>
+        {/* <button onClick={() => removeItem()}>Удалить значение</button> */}
+      </div>
     </>
   );
 }
