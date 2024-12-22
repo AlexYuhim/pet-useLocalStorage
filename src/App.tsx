@@ -2,7 +2,7 @@ import './App.css';
 import { useLocalStorage } from './useLocalStorage';
 
 function App() {
-  const [value, { setValue }] = useLocalStorage('some-key');
+  const [value, { setValue, removeItem }] = useLocalStorage('some-key');
   return (
     <>
       <p>Значение из LocalStorage: {value}</p>
@@ -10,7 +10,7 @@ function App() {
         <button onClick={() => setValue('new storage value')}>
           Задать значение
         </button>
-        {/* <button onClick={() => removeItem()}>Удалить значение</button> */}
+        <button onClick={() => removeItem()}>Удалить значение</button>
       </div>
     </>
   );
